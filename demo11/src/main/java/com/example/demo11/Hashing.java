@@ -1,3 +1,5 @@
+package com.example.frontend;
+
 import java.security.MessageDigest;
 
 public class Hashing {
