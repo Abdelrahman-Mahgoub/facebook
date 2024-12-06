@@ -1,20 +1,29 @@
+package com.example.demo11;
+
+import com.google.gson.annotations.Expose;
+
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class User {
-    private final String userId;
-    private final String email;
-    private final String username;
-    private final String password;
-    private final String dateOfBirth;
+    @Expose
+    private  String userId; // Gson will now handle this field
+    @Expose
+    private  String email;
+    @Expose
+    private  String username;
+    @Expose
+    private  String password;
+    @Expose
+    private  LocalDate dateOfBirth;
     private String status;
-
 
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public User( String email, String username, String password, String dateOfBirth) {
+    public User(String email, String username, String password, LocalDate dateOfBirth) {
         this.email = email;
         this.userId= UUID.randomUUID().toString();
         this.username = username;
@@ -39,7 +48,7 @@ public class User {
         return password;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
